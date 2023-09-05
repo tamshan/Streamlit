@@ -2,8 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-#import xgboost as xgb
-import re
+import xgboost as xgb
+#import re
 from PIL import Image
 
 with open('model1.pkl', "rb") as f:
