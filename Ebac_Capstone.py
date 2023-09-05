@@ -7,7 +7,7 @@ import re
 from PIL import Image
 
 
-@st.cache_resource
+@st.cache
 def load_models(path):
 	"""
 	Load models from pickle files for each of the 5 columns to be predicted
