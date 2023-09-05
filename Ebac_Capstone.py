@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-import xgboost as xgb
+#import xgboost as xgb
 import re
 from PIL import Image
 
