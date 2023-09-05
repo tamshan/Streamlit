@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-#import xgboost as xgb
+import xgboost as xgb
 #import re
 from PIL import Image
 
@@ -16,6 +16,8 @@ with open('model4.pkl', "rb") as f:
 	model4 = pickle.load(f)
 with open('model5.pkl', "rb") as f:
 	model5 = pickle.load(f)
+	
+!pip install xgboost
 
 @st.cache()
 
