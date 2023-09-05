@@ -8,7 +8,7 @@ from PIL import Image
 
 with open('model1.pkl', "rb") as f:
 	model1 = pickle.load(f)
-with open('model2'.pkl', "rb") as f:
+with open('model2.pkl', "rb") as f:
 	model2 = pickle.load(f)
 with open('model3.pkl', "rb") as f:
 	model3 = pickle.load(f)
