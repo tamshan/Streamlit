@@ -6,28 +6,39 @@ import xgboost as xgb
 import re
 from PIL import Image
 
+with open('model1.pkl', "rb") as f:
+	model1 = pickle.load(f)
+with open('model2'.pkl', "rb") as f:
+	model2 = pickle.load(f)
+with open('model3.pkl', "rb") as f:
+	model3 = pickle.load(f)
+with open('model4.pkl', "rb") as f:
+	model4 = pickle.load(f)
+with open('model5.pkl', "rb") as f:
+	model5 = pickle.load(f)
 
-@st.cache
-def load_models(path):
-	"""
-	Load models from pickle files for each of the 5 columns to be predicted
-	parameters: 
-		path: location where pickle model files are stored
-	return:
-		model1, model2, model3, model4, model5: trained model
-	"""
-	with open(f'{path}/model1.pkl', "rb") as f:
-		model1 = pickle.load(f)
-	with open(f'{path}/model2.pkl', "rb") as f:
-		model2 = pickle.load(f)
-	with open(f'{path}/model3.pkl', "rb") as f:
-		model3 = pickle.load(f)
-	with open(f'{path}/model4.pkl', "rb") as f:
-		model4 = pickle.load(f)
-	with open(f'{path}/model5.pkl', "rb") as f:
-		model5 = pickle.load(f)
+@st.cache()
 
-	return model1, model2, model3, model4, model5
+# def load_models(path):
+# 	"""
+# 	Load models from pickle files for each of the 5 columns to be predicted
+# 	parameters: 
+# 		path: location where pickle model files are stored
+# 	return:
+# 		model1, model2, model3, model4, model5: trained model
+# 	"""
+# 	with open(f'{path}/model1.pkl', "rb") as f:
+# 		model1 = pickle.load(f)
+# 	with open(f'{path}/model2.pkl', "rb") as f:
+# 		model2 = pickle.load(f)
+# 	with open(f'{path}/model3.pkl', "rb") as f:
+# 		model3 = pickle.load(f)
+# 	with open(f'{path}/model4.pkl', "rb") as f:
+# 		model4 = pickle.load(f)
+# 	with open(f'{path}/model5.pkl', "rb") as f:
+# 		model5 = pickle.load(f)
+
+# 	return model1, model2, model3, model4, model5
 
 
 def validate_input(user_input):
@@ -82,11 +93,11 @@ def main():
 	st.set_page_config(page_title=apptitle, page_icon='random', layout= 'wide', initial_sidebar_state="expanded")
 	st.title('CRISPR Repair Outcome Prediction Tool')
 
-	path = r'https://github.com/tamshan/Streamlit.git'
-	model1, model2, model3, model4, model5 = load_models(path)
+	#path = r'https://github.com/tamshan/Streamlit.git'
+	#model1, model2, model3, model4, model5 = load_models(path)
 
 	# page HTML formatting
-	image = Image.open(f'{path}/CRISPR.jpg')
+	image = Image.open('CRISPR.jpg')
 	new_image = image.resize((1200, 200))
 	st.image(new_image, use_column_width=True)
 	
