@@ -6,6 +6,55 @@ import xgboost as xgb
 #import re
 from PIL import Image
 
+import streamlit as st
+import subprocess
+
+# Title
+st.title('XGBoost Installation App')
+
+# Sidebar
+st.sidebar.header('Installation Options')
+
+# Checkbox to install XGBoost
+install_xgboost = st.sidebar.checkbox('Install XGBoost')
+
+# Check if the user wants to install XGBoost
+if install_xgboost:
+    # Install XGBoost using pip
+    st.sidebar.subheader('Installing XGBoost...')
+    result = subprocess.run(['pip', 'install', 'xgboost'], capture_output=True, text=True)
+    
+    # Check if installation was successful
+    if result.returncode == 0:
+        st.sidebar.success('XGBoost has been successfully installed!')
+    else:
+        st.sidebar.error('An error occurred during installation.')
+
+# Main content
+st.write('Welcome to the XGBoost Installation App!')
+st.write('Use the sidebar on the left to install XGBoost.')
+
+# Instructions
+st.write('1. Check the "Install XGBoost" checkbox in the sidebar.')
+st.write('2. Wait for the installation process to complete.')
+st.write('3. Check the installation status in the sidebar.')
+
+# Note: This is a simplified example and may not work in all environments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 with open('model1.pkl', "rb") as f:
 	model1 = pickle.load(f)
 with open('model2.pkl', "rb") as f:
