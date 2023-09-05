@@ -17,7 +17,7 @@ with open('model4.pkl', "rb") as f:
 with open('model5.pkl', "rb") as f:
 	model5 = pickle.load(f)
 	
-!pip install xgboost
+pip install xgboost
 
 @st.cache()
 
