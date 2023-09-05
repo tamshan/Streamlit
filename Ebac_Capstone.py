@@ -82,7 +82,7 @@ def main():
 	st.set_page_config(page_title=apptitle, page_icon='random', layout= 'wide', initial_sidebar_state="expanded")
 	st.title('CRISPR Repair Outcome Prediction Tool')
 
-	path = r'C:\Users\Tam\Streamlit_Capstone'
+	path = r'https://github.com/tamshan/Streamlit.git'
 	model1, model2, model3, model4, model5 = load_models(path)
 
 	# page HTML formatting
